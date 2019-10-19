@@ -10,15 +10,19 @@ namespace Core.Inventory
         [SerializeField] InventorySlot[] inventorySlots;
         public Dictionary<InventorySlot, Item> currentInventory = new Dictionary<InventorySlot, Item>();
 
+        public bool inventoryActive = false;
+
         public void DisplayInventory()
         {
             if(!inventoryCanvas.gameObject.activeSelf)
             {
                 inventoryCanvas.gameObject.SetActive(true);
+                inventoryActive = true;
             }
             else
             {
                 inventoryCanvas.gameObject.SetActive(false);
+                inventoryActive = false;
             }
         }
 

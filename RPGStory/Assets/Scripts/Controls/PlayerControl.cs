@@ -34,31 +34,79 @@ namespace Core.Controls
             {
                 inventory.DisplayInventory();
             }
+
+            if(inventory.inventoryActive)
+            {
+                InventoryControls();
+            }
         }
 
         private void MovePlayer()
         {
-            float horizontalInput = Input.GetAxis("Horizontal");
-            float verticalInput = Input.GetAxis("Vertical");
+            float horizontalInput = Input.GetAxisRaw("Horizontal");
+            float verticalInput = Input.GetAxisRaw("Vertical");
             
             //Old, multi-dimentional code
             //transform.position = transform.position + new Vector3(horizontalInput * movementSpeed * Time.deltaTime, verticalInput * movementSpeed * Time.deltaTime, 0);
 
             // New version
+
+            float deadZone = .25f;
+            Vector3 joyStickInput = new Vector3(horizontalInput * movementSpeed * Time.deltaTime, verticalInput * movementSpeed * Time.deltaTime,0);
             float horizontalInputAbsVal = Mathf.Abs(horizontalInput);
             float verticalInputAbsVal = Mathf.Abs(verticalInput);
 
-            if(horizontalInputAbsVal > verticalInputAbsVal)
+            if(horizontalInputAbsVal < deadZone)
             {
-                transform.position = transform.position + new Vector3(horizontalInput * movementSpeed * Time.deltaTime, transform.position.y, 0);
+                joyStickInput.x = 0.0f;
             }
-            else
+            if(verticalInputAbsVal < deadZone)
             {
-                transform.position = transform.position + new Vector3(transform.position.x, verticalInput * movementSpeed * Time.deltaTime, 0);
+               joyStickInput.y = 0.0f;
             }
+
+            transform.position = transform.position + joyStickInput;
 
             UpdateCharacterSprites(horizontalInput, verticalInput);
         }
+
+        void InventoryControls()
+        {
+            int currentInventoryNav = 0;
+
+            Item selectedItem;
+
+            if(Input.GetAxisRaw("DPad Y") > 0 || Input.GetButtonDown("InventoryUp"))
+            {
+                if(currentInventoryNav != 0)
+                {
+                    int prevInventoryItem = currentInventoryNav - 1;
+
+                    selectedItem = inventory.currentInventory[prevInventoryItem];
+
+                    currentInventoryNav = prevInventoryItem;
+                }
+                
+                Debug.Log(selectedItem);
+            }
+
+            if(Input.GetAxisRaw("DPad Y") < 0 || Input.GetButtonDown("InventoryDown"))
+            {
+                if(currentInventoryNav != inventory.currentInventory.Count)
+                {
+                    int nextInventoryItem = currentInventoryNav + 1;
+
+                    selectedItem = inventory.currentInventory[nextInventoryItem];
+
+                    currentInventoryNav = nextInventoryItem;
+                }
+        
+                Debug.Log(selectedItem);
+            }
+        }
+
+
+        // Can this be moved out of control??
 
         private void UpdateCharacterSprites(float horizontalInput, float verticalInput)
         {

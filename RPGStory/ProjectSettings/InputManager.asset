@@ -25,8 +25,8 @@ InputManager:
     m_Name: Vertical
     descriptiveName: Move Forward
     descriptiveNegativeName: Move Backward
-    negativeButton: down
-    positiveButton: up
+    negativeButton: 
+    positiveButton: 
     altNegativeButton: s
     altPositiveButton: w
     gravity: 0
@@ -292,4 +292,36 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: InventoryUp
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: up
+    altNegativeButton: 
+    altPositiveButton: joystick button 1
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 1
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: InventoryDown
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: down
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: joystick button 1
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 1
     joyNum: 0

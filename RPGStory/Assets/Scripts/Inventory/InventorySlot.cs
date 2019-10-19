@@ -10,6 +10,7 @@ namespace Core.Inventory
         InventorySystem inventory;
         Text slotTextBox;
         public int Order;
+        [SerializeField] GameObject background;
         public bool Occupied = false;
         private string slotText;
         public string GetSlotText {
@@ -21,6 +22,11 @@ namespace Core.Inventory
         {
             slotTextBox = GetComponent<Text>();
             slotTextBox.text = GetSlotText;
+        }
+
+        public void Selected(bool isSelected)
+        {
+            background.SetActive(isSelected);
         }
     }
 }

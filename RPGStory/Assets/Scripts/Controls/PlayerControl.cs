@@ -11,7 +11,6 @@ namespace Core.Controls
         InventorySystem inventory;
         Animator animator;
         [SerializeField] int movementSpeed = 2;
-
         enum Position {Forward, Backward, Right, Left}
         Position currentPostion = Position.Forward;
 
@@ -28,7 +27,6 @@ namespace Core.Controls
 
         private void RespondToInput()
         {
-            MovePlayer();
 
             if(Input.GetButtonDown("Inventory"))
             {
@@ -38,6 +36,10 @@ namespace Core.Controls
             if(inventory.inventoryActive)
             {
                 InventoryControls();
+            }
+            else
+            {
+                MovePlayer();
             }
         }
 
@@ -72,38 +74,37 @@ namespace Core.Controls
 
         void InventoryControls()
         {
-            int currentInventoryNav = 0;
-
-            Item selectedItem;
+            if(Input.GetAxisRaw("DPad Y") < 0 || Input.GetButtonDown("InventoryDown") )
+            {   
+                if(inventory.currentInventory.Count < 1)
+                {
+                    Debug.Log("No Inventory"); 
+                }
+                else
+                {
+                    inventory.SelectInventorySlot(inventory.selectedSlotOrder + 1);
+                }
+            }
 
             if(Input.GetAxisRaw("DPad Y") > 0 || Input.GetButtonDown("InventoryUp"))
             {
-                if(currentInventoryNav != 0)
+                if(inventory.currentInventory.Count < 1)
                 {
-                    int prevInventoryItem = currentInventoryNav - 1;
-
-                    selectedItem = inventory.currentInventory[prevInventoryItem];
-
-                    currentInventoryNav = prevInventoryItem;
+                    Debug.Log("No Inventory");
                 }
-                
-                Debug.Log(selectedItem);
+                else
+                {
+                    inventory.SelectInventorySlot(inventory.selectedSlotOrder - 1);
+                }
             }
 
-            if(Input.GetAxisRaw("DPad Y") < 0 || Input.GetButtonDown("InventoryDown"))
+            if(Input.GetButtonDown("Submit"))
             {
-                if(currentInventoryNav != inventory.currentInventory.Count)
-                {
-                    int nextInventoryItem = currentInventoryNav + 1;
-
-                    selectedItem = inventory.currentInventory[nextInventoryItem];
-
-                    currentInventoryNav = nextInventoryItem;
-                }
-        
-                Debug.Log(selectedItem);
+                inventory.CallItemDialogueBox();
             }
         }
+
+        
 
 
         // Can this be moved out of control??

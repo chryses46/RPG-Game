@@ -9,7 +9,6 @@ namespace Core.Interactables
         InventorySystem inventory;
         DialogueSystem dialogue;
         SpriteRenderer spriteRenderer;
-        
         CircleCollider2D circleCollider2D;
         [SerializeField] Sprite openChestSprite;
         [SerializeField] string chestContents;
@@ -40,8 +39,8 @@ namespace Core.Interactables
             if(Input.GetButton("Submit"))
             {
                 spriteRenderer.sprite = openChestSprite;
-                dialogue.InitiateBox(dialogue.gameDialogue[name], 4);
-                Debug.Log("Adding " + chestItem.itemName);
+                dialogue.InitiateInfoDialogue(dialogue.gameDialogue[name], 4);
+                
                 inventory.AddItemToInventory(chestItem);
                 circleCollider2D.enabled = false;
             }

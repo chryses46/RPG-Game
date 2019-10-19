@@ -18,7 +18,7 @@ namespace Core
         private IEnumerator LoadGame()
         {
             yield return new WaitForSeconds(2);
-            dialogue.InitiateBox(dialogue.gameDialogue["Start"], 4);
+            //dialogue.InitiateInfoDialogue(dialogue.gameDialogue["Start"], 4); Disabled for now
         }
     }
 }

@@ -6,8 +6,6 @@ namespace Core.Controls
 {
     public class PlayerControl : MonoBehaviour
     {
-        
-
         InventorySystem inventory;
         Animator animator;
         [SerializeField] int movementSpeed = 2;
@@ -27,7 +25,6 @@ namespace Core.Controls
 
         private void RespondToInput()
         {
-
             if(Input.GetButtonDown("Inventory"))
             {
                 inventory.DisplayInventory();
@@ -74,11 +71,23 @@ namespace Core.Controls
 
         void InventoryControls()
         {
-            if(Input.GetAxisRaw("DPad Y") < 0 || Input.GetButtonDown("InventoryDown") )
-            {   
-                if(inventory.currentInventory.Count < 1)
+            if(inventory.isFocus)
+            {
+                ProcessInventoryNavigation();
+            }
+            else
+            {
+                ProcessItemInteraction();
+            }
+        }
+
+        private void ProcessInventoryNavigation()
+        {
+            if (Input.GetAxisRaw("DPad Y") < 0 || Input.GetButtonDown("InventoryDown"))
+            {
+                if (inventory.currentInventory.Count < 1)
                 {
-                    Debug.Log("No Inventory"); 
+                    // Debug.Log("No Inventory");
                 }
                 else
                 {
@@ -86,11 +95,11 @@ namespace Core.Controls
                 }
             }
 
-            if(Input.GetAxisRaw("DPad Y") > 0 || Input.GetButtonDown("InventoryUp"))
+            if (Input.GetAxisRaw("DPad Y") > 0 || Input.GetButtonDown("InventoryUp"))
             {
-                if(inventory.currentInventory.Count < 1)
+                if (inventory.currentInventory.Count < 1)
                 {
-                    Debug.Log("No Inventory");
+                    // Debug.Log("No Inventory");
                 }
                 else
                 {
@@ -98,13 +107,43 @@ namespace Core.Controls
                 }
             }
 
-            if(Input.GetButtonDown("Submit"))
+            if (Input.GetButtonDown("Cancel"))
             {
-                inventory.CallItemDialogueBox();
+                inventory.DisplayInventory();
+            }
+
+            if(inventory.currentlySelectedSlot)
+            {
+                if (Input.GetButtonDown("Submit"))
+                {
+                    inventory.CallItemInteractBox(true);
+                    Debug.Log("call CallItemInteractBox from Player Control");
+                }
             }
         }
 
-        
+        private void ProcessItemInteraction()
+        {
+            if (inventory.currentlySelectedSlot.isFocus)
+            {
+                if (Input.GetAxisRaw("DPad X") > 0 || Input.GetButtonDown("Horizontal"))
+                {
+                    inventory.CycleItemInteract();
+                }
+
+                if (Input.GetButtonDown("Submit"))
+                {
+                    inventory.ItemInteract();
+                }
+
+                if (Input.GetButtonDown("Cancel"))
+                {
+                    inventory.CallItemInteractBox(false);
+                }
+            }
+        }
+
+
 
 
         // Can this be moved out of control??

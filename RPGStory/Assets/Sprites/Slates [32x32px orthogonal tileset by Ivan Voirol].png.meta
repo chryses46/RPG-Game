@@ -2668,7 +2668,7 @@ TextureImporter:
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_875
   - first:
       213: 8474728713092595646
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_876
+    second: Stump_Grass
   - first:
       213: 387318909169763873
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_877
@@ -21861,7 +21861,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_876
+      name: Stump_Grass
       rect:
         serializedVersion: 2
         x: 384

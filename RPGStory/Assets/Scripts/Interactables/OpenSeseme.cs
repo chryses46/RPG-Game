@@ -39,7 +39,7 @@ namespace Core.Interactables
             if(Input.GetButton("Submit"))
             {
                 spriteRenderer.sprite = openChestSprite;
-                dialogue.InitiateInfoDialogue(dialogue.gameDialogue[name], 4);
+                dialogue.InitiateInfoDialogue(dialogue.gameDialogue[name], 3);
                 
                 inventory.AddItemToInventory(chestItem);
                 circleCollider2D.enabled = false;

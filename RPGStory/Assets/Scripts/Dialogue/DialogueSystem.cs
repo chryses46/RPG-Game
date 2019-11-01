@@ -11,11 +11,6 @@ namespace Core.Dialogue
         InventorySystem inventory;
         [SerializeField] Canvas dialogueCanvas; 
         [SerializeField] GameObject infoDialogue;
-        [SerializeField] GameObject itemInteractDialogue;
-        [SerializeField] Text itemUseResult;
-        [SerializeField] Text itemDetailsResult;
-
-        bool dialogueCanvasEnabled;
 
         public int DelayTime = 2;
         public Dictionary<string, string> gameDialogue = new Dictionary<string, string>() 
@@ -28,56 +23,58 @@ namespace Core.Dialogue
             inventory = FindObjectOfType<InventorySystem>();
         }
 
-        void Update()
-        {
-            if(Input.GetButtonDown("Cancel"))
-            {
-                InitiateInfoDialogue("Dialogue Test", 2);
-            }
-        }
-
         public void InitiateInfoDialogue(string text, int givenDelay)
         {
-
-            ToggleDialogueBox(true);
-            infoDialogue.SetActive(true);
-            infoDialogue.GetComponent<Text>().text = text;
-            
-            if(givenDelay != 0) // if delay is 0, the box will stay
+            if(dialogueCanvas.gameObject.activeSelf)
             {
-                DelayTime = givenDelay;
-                StartCoroutine("HideDialogueBoxDelay");
+                if(DelayTime > 0)
+                {
+                    StopCoroutine("HideDialogueBoxDelay");
+
+                    SetInfoDialogue(text, givenDelay);
+                }
+                else
+                {
+                    SetInfoDialogue(text, givenDelay);
+                }
             }
-            
+            else
+            {
+                ToggleDialogueBox(true);
+
+                SetInfoDialogue(text, givenDelay);  
+            } 
         }
 
-        public void ItemInteractDialogueBox()
+        private void SetInfoDialogue(string text, int givenDelay)
         {
-            // box with options of Use and Inspect
-            if(!dialogueCanvasEnabled) ToggleDialogueBox(true);
-            infoDialogue.SetActive(false);
-            itemInteractDialogue.SetActive(true);
+            infoDialogue.GetComponent<Text>().text = text;
+
+            CloseDialogueBoxOnDelay(givenDelay);
+        }
+
+        private void CloseDialogueBoxOnDelay(int givenDelay)
+        {
+            DelayTime = givenDelay;
+
+            if (DelayTime > 0) // if delay is 0, the box will stay
+            {
+                StartCoroutine("HideDialogueBoxDelay");
+            }
         }
 
         public void ToggleDialogueBox(bool option)
         {
-            dialogueCanvasEnabled = option;
-            
-            if(option)
-            {
-                dialogueCanvas.gameObject.SetActive(option);
-            }
-
-            if(!inventory.inventoryActive && !option) // Ensure to always disable inventory before calling this for Dialogue Canvas to close;
-            {
-                dialogueCanvas.gameObject.SetActive(option);    
-            }
+            dialogueCanvas.gameObject.SetActive(option);
         }
 
         IEnumerator HideDialogueBoxDelay()
         {
             yield return new WaitForSeconds(DelayTime);
+
             ToggleDialogueBox(false);
+
+            DelayTime = 0;
         }
     }
 }

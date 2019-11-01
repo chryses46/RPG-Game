@@ -14,9 +14,13 @@ namespace Core.Inventory
 
         public bool inventoryActive = false;
 
+        public bool isFocus;
+        
+        public bool inRangeOfPuzzle;
+
         public int selectedSlotOrder;
 
-        InventorySlot currentlySelectedSlot;
+        public InventorySlot currentlySelectedSlot;
 
         void Start()
         {
@@ -25,7 +29,10 @@ namespace Core.Inventory
 
         public void DisplayInventory()
         {
+            
+            if(currentlySelectedSlot) currentlySelectedSlot.Interacted(false);
             GetCurrentInventory(0);
+            isFocus = true;
 
             if(!inventoryCanvas.gameObject.activeSelf)
             {
@@ -62,8 +69,6 @@ namespace Core.Inventory
             InventorySlot slot = inventorySlots[AvailableSlot()];
             currentInventory.Add(slot, item);
             UpdateSlot(item, slot);
-
-            Debug.Log("Current inventory count: " + currentInventory.Count);
         }
 
         private void UpdateSlot(Item item, InventorySlot slot)
@@ -77,11 +82,11 @@ namespace Core.Inventory
         {
             if (updatedSelection == currentInventory.Count)
             {
-                Debug.Log("End of inventory"); // either return or do something here later like animate a jarring "down" movement of the slection sprite.
+                // Debug.Log("End of inventory"); // either return or do something here later like animate a jarring "down" movement of the slection sprite.
             }
             else if (updatedSelection == -1)
             {
-                Debug.Log("Top of inventory"); // either return or do something here later like animate a jarring "up" movement of the slection sprite.
+                // Debug.Log("Top of inventory"); // either return or do something here later like animate a jarring "up" movement of the slection sprite.
             }
             else
             {
@@ -104,9 +109,51 @@ namespace Core.Inventory
             }
         }
 
-        public void CallItemDialogueBox()
+        public void RemoveItem(InventorySlot slot)
         {
-            dialogue.ItemInteractDialogueBox();
+            slot.EmptySlot();
+            Item item = currentInventory[slot];
+            currentInventory.Remove(slot);
+            slot.gameObject.SetActive(false);
+            isFocus = true;
+        }
+
+        public void CallItemInteractBox(bool isCalled)
+        {
+            currentlySelectedSlot.Interacted(isCalled);
+
+            if(isCalled)
+            {
+                isFocus = false;
+            }
+            else
+            {
+                isFocus = true;
+            }
+        }
+
+        public void ItemInteract()
+        {
+            if(currentlySelectedSlot.useSelected)
+            {
+                if(!inRangeOfPuzzle)
+                {
+                    dialogue.InitiateInfoDialogue("You can't use that here", 3);
+                }
+                else
+                {
+                    currentlySelectedSlot.useAttempted = true;
+                }
+            }
+            else
+            {
+                dialogue.InitiateInfoDialogue(currentInventory[currentlySelectedSlot].itemDescription, 3);
+            }
+        }
+
+        public void CycleItemInteract()
+        {
+            currentlySelectedSlot.ToggleInteractOptions();
         }
 
     }

@@ -1278,7 +1278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &182922842
 Transform:
   m_ObjectHideFlags: 0
@@ -1287,7 +1287,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 182922841}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.48, y: 2.46, z: 0}
+  m_LocalPosition: {x: -10.514, y: 0.615, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1857085439}
@@ -1882,8 +1882,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.3, y: 6.91, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
-  m_Children:
-  - {fileID: 519420032}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3393,7 +3392,7 @@ Camera:
   far clip plane: 1
   field of view: 60
   orthographic: 1
-  orthographic size: 3.41
+  orthographic size: 2.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3417,10 +3416,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.14, y: -0.08, z: -0.06}
+  m_LocalPosition: {x: 0.03999996, y: -0.07999992, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
-  m_Father: {fileID: 341430834}
+  m_Father: {fileID: 2051391776}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &522720999
@@ -5418,8 +5417,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: -9, y: 1, z: 0}
     second:
-      m_TileIndex: 20
-      m_TileSpriteIndex: 9
+      m_TileIndex: 12
+      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -5438,15 +5437,6 @@ Tilemap:
     second:
       m_TileIndex: 13
       m_TileSpriteIndex: 8
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
-  - first: {x: -9, y: 2, z: 0}
-    second:
-      m_TileIndex: 22
-      m_TileSpriteIndex: 16
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -5779,7 +5769,7 @@ Tilemap:
   - first: {x: -1, y: 8, z: 0}
     second:
       m_TileIndex: 21
-      m_TileSpriteIndex: 15
+      m_TileSpriteIndex: 16
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -5919,7 +5909,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: fdce2d1383b91594198039df0d944651, type: 2}
-  - m_RefCount: 7
+  - m_RefCount: 8
     m_Data: {fileID: 11400000, guid: 253e9fb55b83d8f4c812fd0b4e65f646, type: 2}
   - m_RefCount: 10
     m_Data: {fileID: 11400000, guid: 1b0723a3e963beb4daf558fcd734b2b0, type: 2}
@@ -5935,12 +5925,12 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 0c5fc4ad7f46af74d95dc0554e170d73, type: 2}
   - m_RefCount: 7
     m_Data: {fileID: 11400000, guid: 83d4ace1392d53c45b8f749c2549d197, type: 2}
-  - m_RefCount: 32
+  - m_RefCount: 31
     m_Data: {fileID: 11400000, guid: 7f19693ea2bc3294fa79e80f865f4c15, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 68c429c5fd32eb546a7127e562ae14b9, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: a83c1d2c057738348b34de95b314606c, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: f0aae341d84e1c34da434ed734ac17ac, type: 2}
   - m_RefCount: 1
@@ -5967,11 +5957,11 @@ Tilemap:
   - m_RefCount: 10
     m_Data: {fileID: 6407500331774115840, guid: 12e57dc0a30b07f4ba297cf46a1ce168,
       type: 3}
-  - m_RefCount: 32
+  - m_RefCount: 31
     m_Data: {fileID: 739511048113939252, guid: 12e57dc0a30b07f4ba297cf46a1ce168, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 7
+  - m_RefCount: 8
     m_Data: {fileID: 6979532719341729965, guid: 12e57dc0a30b07f4ba297cf46a1ce168,
       type: 3}
   - m_RefCount: 0
@@ -5982,11 +5972,10 @@ Tilemap:
   - m_RefCount: 7
     m_Data: {fileID: -401578154052047700, guid: 12e57dc0a30b07f4ba297cf46a1ce168,
       type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -6300414374456306235, guid: 12e57dc0a30b07f4ba297cf46a1ce168,
-      type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 8247476243162822671, guid: 12e57dc0a30b07f4ba297cf46a1ce168,
       type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 7611432526786944551, guid: 12e57dc0a30b07f4ba297cf46a1ce168,
@@ -6012,7 +6001,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 484509715137342561, guid: 12e57dc0a30b07f4ba297cf46a1ce168, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 78
+  - m_RefCount: 77
     m_Data:
       e00: 1
       e01: 0
@@ -6031,7 +6020,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 78
+  - m_RefCount: 77
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
     m_Data: {r: 0, g: 0, b: 0, a: 0}
@@ -10121,7 +10110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682086191}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.55, y: 0.23, z: 0}
+  m_LocalPosition: {x: -5.562, y: 0.123, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 778768429}
@@ -10230,7 +10219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5be2ba12db2c194fac229b81856e1de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintText: Nothing to see here.
+  hintText: Pay attention to your surroundings. It will be very helpful here.
+  enablesAnItem: 1
+  itemToEnable: {fileID: 182922841}
 --- !u!1 &1694539711
 GameObject:
   m_ObjectHideFlags: 0
@@ -37707,9 +37698,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051391773}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.89, y: 5.43, z: 0}
+  m_LocalPosition: {x: -5.64, y: -1.22, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0}
-  m_Children: []
+  m_Children:
+  - {fileID: 519420032}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

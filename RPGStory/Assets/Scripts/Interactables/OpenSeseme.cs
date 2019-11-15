@@ -31,7 +31,8 @@ namespace Core.Interactables
 
         void OnTriggerStay2D(Collider2D other)
         {
-            Interact();
+            if(other.gameObject.tag == "Player")
+                Interact();
         }
 
         void Interact()

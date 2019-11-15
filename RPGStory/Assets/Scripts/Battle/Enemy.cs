@@ -27,7 +27,6 @@ namespace Core.Battle
         [SerializeField] int maxTravelDistance = 4;
         float travelDistance;
         Vector3 destination;
-        List<Vector3> noFlyZones = new List<Vector3>();
         bool movementPaused = false;
         List<ContactPoint2D> collisionPoints = new List<ContactPoint2D>();
         bool movingToDestination = false;
@@ -36,7 +35,7 @@ namespace Core.Battle
 
         bool playerInRange;
         GameObject player;
-        const float distanceBuffer = 1f;
+        const float distanceBuffer = .25f;
         
         void Start()
         {
@@ -193,8 +192,6 @@ namespace Core.Battle
 
             currentRandomFacingDirectionInt = newRandomFacingDirectionInt;
 
-            Debug.Log(currentRandomFacingDirectionInt);
-
                 // Explicitly cast FacingDirection as randomFacingDirectionInt to obtain FacingDirection enum.
             FacingDirection newFacingDirection = (FacingDirection)currentRandomFacingDirectionInt;
 
@@ -250,9 +247,6 @@ namespace Core.Battle
 
         void OnCollisionEnter2D(Collision2D other)
         {   
-            Debug.Log("Points colliding: " + other.contacts.Length);
-            Debug.Log("First point that collided: " + other.contacts[0].point);
-
             if(!movementPaused)
                 StartCoroutine(PatrolPause());
         }

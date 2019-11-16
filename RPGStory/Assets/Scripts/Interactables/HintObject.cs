@@ -9,36 +9,17 @@ namespace Core.Interactables
         CircleCollider2D circleCollider2D;
         DialogueSystem dialogue;
 
+        CameraPan cameraPan;
+
         [SerializeField] string hintText;
         [SerializeField] bool enablesAnItem;
         [SerializeField] GameObject itemToEnable;
-
-        Camera cam;
-        int camMovementSpeed = 2;
-        Vector3 originalCameraPosition;
-        float camPanSpeed;
-        bool panCamToItem = false;
-        bool panCamBack = false;
 
         void Start()
         {
             circleCollider2D = GetComponent<CircleCollider2D>();
             dialogue = FindObjectOfType<DialogueSystem>();
-            cam = Camera.main;
-        }
-
-        void Update()
-        {
-            camPanSpeed = camMovementSpeed * Time.deltaTime;
-
-            if(panCamToItem)
-            {
-                CameraPanToItemToEnable();
-            }
-            else if(panCamBack)
-            {
-                CameraPanBack();
-            }
+            cameraPan = FindObjectOfType<CameraPan>();
         }
 
         void OnTriggerStay2D(Collider2D other)
@@ -50,33 +31,9 @@ namespace Core.Interactables
                 if(Input.GetButtonDown("Submit"))
                 {
                     itemToEnable.SetActive(true);
-                    panCamToItem = true;
+                    
+                    cameraPan.InitiatePan(itemToEnable.transform.position, GameObject.FindGameObjectWithTag("Player").transform.position);
                 }
-            }
-        }
-
-        void CameraPanToItemToEnable()
-        {   
-            if(originalCameraPosition == null)
-                originalCameraPosition = cam.transform.position;
-            
-            cam.transform.position = Vector2.MoveTowards(originalCameraPosition, itemToEnable.transform.position, camPanSpeed);
-
-            if(cam.transform.position == itemToEnable.transform.position)
-            {
-                panCamToItem = false;
-                panCamBack = true;
-            }
-            
-        }
-
-        void CameraPanBack()
-        {
-            cam.transform.position = Vector2.MoveTowards(cam.transform.position, originalCameraPosition, camPanSpeed);
-
-            if(cam.transform.position == originalCameraPosition)
-            {
-                panCamBack = false;
             }
         }
 

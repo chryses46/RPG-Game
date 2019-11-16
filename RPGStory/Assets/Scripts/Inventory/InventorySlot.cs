@@ -20,15 +20,10 @@ namespace Core.Inventory
         public bool useAttempted = false;
         public bool isFocus;
         private string slotText;
-        public string GetSlotText {
-            set{slotText=value;} 
-            get{return slotText;}
-        }
 
         void Start()
         {
             slotTextBox = GetComponent<Text>();
-            slotTextBox.text = GetSlotText;
             useSelected = true;
         }
 
@@ -41,6 +36,11 @@ namespace Core.Inventory
         {
             interactBackground.SetActive(interacted);
             isFocus = interacted;
+        }
+
+        public void SetSlotText(string text)
+        {
+            slotText = text;
         }
 
         public void ToggleInteractOptions()
@@ -70,7 +70,7 @@ namespace Core.Inventory
         public void EmptySlot()
         {
             slotTextBox.text = null;
-            GetSlotText = null;
+            slotText = null;
             Occupied = false;
             interactBackground.SetActive(false);
             background.SetActive(false);

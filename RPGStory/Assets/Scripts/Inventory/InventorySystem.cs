@@ -74,7 +74,7 @@ namespace Core.Inventory
         private void UpdateSlot(Item item, InventorySlot slot)
         {
             slot.gameObject.SetActive(true);
-            slot.GetSlotText = currentInventory[slot].itemName;
+            slot.SetSlotText(currentInventory[slot].itemName);
             slot.Occupied = true;
         }
 

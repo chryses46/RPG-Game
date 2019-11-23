@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Core
 {
+    [ExecuteInEditMode]
     public class FollowPlayer : MonoBehaviour
     {
    

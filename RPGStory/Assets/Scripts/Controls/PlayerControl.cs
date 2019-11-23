@@ -44,27 +44,22 @@ namespace Core.Controls
         {
             float horizontalInput = Input.GetAxisRaw("Horizontal");
             float verticalInput = Input.GetAxisRaw("Vertical");
-            
-            //Old, multi-dimentional code
-            //transform.position = transform.position + new Vector3(horizontalInput * movementSpeed * Time.deltaTime, verticalInput * movementSpeed * Time.deltaTime, 0);
 
-            // New version
-
-            float deadZone = .25f;
-            Vector3 joyStickInput = new Vector3(horizontalInput * movementSpeed * Time.deltaTime, verticalInput * movementSpeed * Time.deltaTime,0);
-            float horizontalInputAbsVal = Mathf.Abs(horizontalInput);
-            float verticalInputAbsVal = Mathf.Abs(verticalInput);
-
-            if(horizontalInputAbsVal < deadZone)
+            if(Mathf.Abs(verticalInput) > 0 && Mathf.Abs(horizontalInput) > 0)
             {
-                joyStickInput.x = 0.0f;
-            }
-            if(verticalInputAbsVal < deadZone)
-            {
-               joyStickInput.y = 0.0f;
+                if(Mathf.Abs(verticalInput) > Mathf.Abs(horizontalInput))
+                {
+                    horizontalInput = 0;
+                }
+                else
+                {
+                    verticalInput = 0;
+                }
             }
 
-            transform.position = transform.position + joyStickInput;
+            Vector3 newDestination = new Vector3(horizontalInput * movementSpeed * Time.deltaTime, verticalInput * movementSpeed * Time.deltaTime, 0);
+
+            transform.position = transform.position + newDestination;
 
             UpdateCharacterSprites(horizontalInput, verticalInput);
         }
@@ -150,6 +145,15 @@ namespace Core.Controls
 
         private void UpdateCharacterSprites(float horizontalInput, float verticalInput)
         {
+
+            if(verticalInput == 0)
+            {
+                Debug.Log("Vertical Input is 0");
+            }
+            else if(horizontalInput == 0)
+            {
+                Debug.Log("Horizontal Input is 0");
+            }
 
             if (verticalInput > 0)
             {

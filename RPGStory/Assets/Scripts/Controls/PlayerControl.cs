@@ -9,17 +9,21 @@ namespace Core.Controls
         InventorySystem inventory;
         Animator animator;
         CameraPan cameraPan;
+        SpriteRenderer spriteRenderer;
         [SerializeField] int movementSpeed = 2;
         enum Position {Forward, Backward, Right, Left}
         Position currentPostion = Position.Forward;
+        string currentIdleSprite;
 
         bool dpadActive = false;
+        bool playerIdle = false;
 
         void Start()
         {
             inventory = FindObjectOfType<InventorySystem>();
             animator = GetComponent<Animator>();
             cameraPan = FindObjectOfType<CameraPan>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
         void Update()
@@ -27,6 +31,10 @@ namespace Core.Controls
             if(!cameraPan.cameraIsPanning)
             {
                 RespondToInput();
+            }
+            else
+            {
+                SetIdleSprite();
             }
             
         }
@@ -41,6 +49,7 @@ namespace Core.Controls
             if(inventory.inventoryActive)
             {
                 InventoryControls();
+                SetIdleSprite();
             }
             else
             {
@@ -70,6 +79,63 @@ namespace Core.Controls
             transform.position = transform.position + newDestination;
 
             UpdateCharacterSprites(horizontalInput, verticalInput);
+        }
+
+        private void UpdateCharacterSprites(float horizontalInput, float verticalInput)
+        {
+            animator.ResetTrigger(currentIdleSprite);
+
+            if (verticalInput > 0)
+            {
+                animator.SetTrigger("Forward");
+                currentPostion = Position.Forward;
+            }
+            else if(verticalInput < 0)
+            {
+                animator.SetTrigger("Backward");
+                currentPostion = Position.Backward;
+            }
+            else if(horizontalInput > 0)
+            {
+                animator.SetTrigger("Right");
+                currentPostion = Position.Right;
+            }
+            else if(horizontalInput < 0)
+            {
+                animator.SetTrigger("Left");
+                currentPostion = Position.Left;
+            }
+            else
+            {
+                SetIdleSprite();
+            }
+        }
+
+        private void SetIdleSprite()
+        {
+            switch(currentPostion)
+            {
+                case Position.Forward:
+                    animator.SetTrigger("ForwardIdle");
+                    currentIdleSprite = "ForwardIdle";
+                    break;
+                case Position.Backward:
+                    animator.SetTrigger("BackwardIdle");
+                    currentIdleSprite = "BackwardIdle";
+                    break;
+                case Position.Right:
+                    animator.SetTrigger("RightIdle");
+                    currentIdleSprite = "RightIdle";
+                    break;
+                case Position.Left:
+                    animator.SetTrigger("LeftIdle");
+                    currentIdleSprite = "LeftIdle";
+                    break;
+                default:
+                    animator.SetTrigger("ForwardIdle");
+                    currentIdleSprite = "ForwardIdle";
+                    break;
+            }
         }
 
         void InventoryControls()
@@ -153,70 +219,7 @@ namespace Core.Controls
             }
         }
 
-
-
-
-        // Can this be moved out of control??
-
-        private void UpdateCharacterSprites(float horizontalInput, float verticalInput)
-        {
-
-            if(verticalInput == 0)
-            {
-                Debug.Log("Vertical Input is 0");
-            }
-            else if(horizontalInput == 0)
-            {
-                Debug.Log("Horizontal Input is 0");
-            }
-
-            if (verticalInput > 0)
-            {
-                animator.SetTrigger("Forward");
-                currentPostion = Position.Forward;
-            }
-            else if(verticalInput < 0)
-            {
-                animator.SetTrigger("Backward");
-                currentPostion = Position.Backward;
-            }
-            else if(horizontalInput > 0)
-            {
-                animator.SetTrigger("Right");
-                currentPostion = Position.Right;
-            }
-            else if(horizontalInput < 0)
-            {
-                animator.SetTrigger("Left");
-                currentPostion = Position.Left;
-            }
-            else
-            {
-                ProcessIdlePosition();
-            }
-        }
-
-        private void ProcessIdlePosition()
-        {
-            switch(currentPostion)
-            {
-                case Position.Forward:
-                    animator.SetTrigger("ForwardIdle");
-                    break;
-                case Position.Backward:
-                    animator.SetTrigger("BackwardIdle");
-                    break;
-                case Position.Right:
-                    animator.SetTrigger("RightIdle");
-                    break;
-                case Position.Left:
-                    animator.SetTrigger("LeftIdle");
-                    break;
-                default:
-                    animator.SetTrigger("ForwardIdle");
-                    break;
-            }
-        }
+        
     }
 
     

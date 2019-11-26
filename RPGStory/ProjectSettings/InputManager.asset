@@ -57,10 +57,10 @@ InputManager:
     m_Name: DPad Y
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    negativeButton: s
+    positiveButton: w
+    altNegativeButton: down
+    altPositiveButton: up
     gravity: 0
     dead: 0
     sensitivity: 1

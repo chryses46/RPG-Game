@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Core.Dialogue;
+using Core.Controls;
 
 namespace Core.Inventory
 {    public class InventorySystem : MonoBehaviour
     {
+        PlayerControl playerControl;
         DialogueSystem dialogue;
         [SerializeField] Canvas inventoryCanvas;
         [SerializeField] InventorySlot[] inventorySlots;
@@ -25,6 +27,7 @@ namespace Core.Inventory
         void Start()
         {
             dialogue = FindObjectOfType<DialogueSystem>();
+            playerControl = FindObjectOfType<PlayerControl>();
         }
 
         public void DisplayInventory()
@@ -38,7 +41,7 @@ namespace Core.Inventory
             {
                 inventoryCanvas.gameObject.SetActive(true);
                 inventoryActive = true;
-                
+
                 selectedSlotOrder = 0;
             }
             else
@@ -93,6 +96,7 @@ namespace Core.Inventory
                 GetCurrentInventory(updatedSelection);
                 selectedSlotOrder = updatedSelection;
             }
+
         }
 
         public void GetCurrentInventory(int requestedSlotOrder)
@@ -151,9 +155,9 @@ namespace Core.Inventory
             }
         }
 
-        public void CycleItemInteract()
+        public void CycleItemInteract(float x)
         {
-            currentlySelectedSlot.ToggleInteractOptions();
+            currentlySelectedSlot.ToggleInteractOptions(x);
         }
 
     }

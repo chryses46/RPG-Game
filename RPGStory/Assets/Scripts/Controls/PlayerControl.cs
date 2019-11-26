@@ -13,7 +13,7 @@ namespace Core.Controls
         enum Position {Forward, Backward, Right, Left}
         Position currentPostion = Position.Forward;
 
-        bool dPadActive = false;
+        bool dpadActive = false;
 
         void Start()
         {
@@ -74,9 +74,12 @@ namespace Core.Controls
 
         void InventoryControls()
         {
+            
             if(inventory.isFocus)
             {
                 ProcessInventoryNavigation();
+
+                ProcessInventoryInteraction();
             }
             else
             {
@@ -84,60 +87,58 @@ namespace Core.Controls
             }
         }
 
+        private void ProcessInventoryInteraction()
+        {
+            if (Input.GetButtonDown("Cancel"))
+                inventory.DisplayInventory();
+
+            if (inventory.currentlySelectedSlot)
+            {
+                if (Input.GetButtonDown("Submit"))
+                    inventory.CallItemInteractBox(true);
+            }
+        }
+
         private void ProcessInventoryNavigation()
         {
-            if (Input.GetAxisRaw("DPad Y") < 0 || Input.GetButtonDown("InventoryDown"))
+            if(!dpadActive && Mathf.Abs(Input.GetAxis("DPad Y")) == 1)
             {
-                if (inventory.currentInventory.Count < 1)
-                {
-                    // Debug.Log("No Inventory");
-                }
-                else
-                {
-                    // get the last d-pad direction store in a var
-                    // if the previous d-pad direction = 
+                dpadActive = true;
 
-                    // or (wile navigating d-pad) (boolean)
-                        // lock d-pad
+                if(inventory.currentInventory.Count < 1) 
+                    return;
 
+                if (Input.GetAxisRaw("DPad Y") < 0)
+                {
                     inventory.SelectInventorySlot(inventory.selectedSlotOrder + 1);
                 }
-            }
-
-            if (Input.GetAxisRaw("DPad Y") > 0 || Input.GetButtonDown("InventoryUp"))
-            {
-                if (inventory.currentInventory.Count < 1)
-                {
-                    // Debug.Log("No Inventory");
-                }
-                else
+                else if (Input.GetAxisRaw("DPad Y") > 0 )
                 {
                     inventory.SelectInventorySlot(inventory.selectedSlotOrder - 1);
                 }
+                
             }
-
-            if (Input.GetButtonDown("Cancel"))
+            else if (dpadActive && Mathf.Abs(Input.GetAxis("DPad Y")) == 0)
             {
-                inventory.DisplayInventory();
-            }
-
-            if(inventory.currentlySelectedSlot)
-            {
-                if (Input.GetButtonDown("Submit"))
-                {
-                    inventory.CallItemInteractBox(true);
-                    Debug.Log("call CallItemInteractBox from Player Control");
-                }
+                dpadActive = false;
             }
         }
 
         private void ProcessItemInteraction()
         {
+
             if (inventory.currentlySelectedSlot.isFocus)
             {
-                if (Input.GetAxisRaw("DPad X") > 0 || Input.GetButtonDown("Horizontal"))
+
+                if(!dpadActive && Mathf.Abs(Input.GetAxis("DPad X")) == 1)
                 {
-                    inventory.CycleItemInteract();
+                    dpadActive = true;
+                    inventory.CycleItemInteract(Input.GetAxis("DPad X")); 
+
+                }
+                else if(dpadActive && Mathf.Abs(Input.GetAxis("DPad X")) == 0)
+                {
+                    dpadActive = false;
                 }
 
                 if (Input.GetButtonDown("Submit"))
@@ -217,6 +218,8 @@ namespace Core.Controls
             }
         }
     }
+
+    
 
     // May need this later but for now; may use DPad for navigating inventory, or moving through text.
     public class DPadButtons : MonoBehaviour

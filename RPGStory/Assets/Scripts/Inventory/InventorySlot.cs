@@ -22,7 +22,6 @@ namespace Core.Inventory
 
         void Start()
         {
-            
             useSelected = true;
         }
 
@@ -43,26 +42,29 @@ namespace Core.Inventory
             slotTextBox.text = text;
         }
 
-        public void ToggleInteractOptions()
+        public void ToggleInteractOptions(float x)
         {
             if(Occupied)
             {
-               if(itemUseSelected.activeSelf)
+                switch(x)
                 {
-                    itemUseSelected.SetActive(false);
-                    useSelected = false;
-                    
-                    itemDetailsSelected.SetActive(true);
-                    detailsSelected = true;
+                    case 1:
+                        itemUseSelected.SetActive(false);
+                        useSelected = false;
+                        itemDetailsSelected.SetActive(true);
+                        detailsSelected = true;
+                        break;
+                    case -1:
+                        itemUseSelected.SetActive(true);
+                        useSelected = true;
+                        itemDetailsSelected.SetActive(false);
+                        detailsSelected = false;
+                        break;
+                    default:
+                        itemUseSelected.SetActive(true);
+                        useSelected = true;
+                        break;
                 }
-                else
-                {
-                    itemUseSelected.SetActive(true);
-                    useSelected = true;
-
-                    itemDetailsSelected.SetActive(false);
-                    detailsSelected = false;
-                } 
             }
             
         }

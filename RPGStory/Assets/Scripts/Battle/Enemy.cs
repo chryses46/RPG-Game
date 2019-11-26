@@ -35,7 +35,7 @@ namespace Core.Battle
 
         bool playerInRange;
         GameObject player;
-        const float distanceBuffer = .25f;
+        const float distanceBuffer = .75f;
         
         void Start()
         {

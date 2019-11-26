@@ -8,19 +8,27 @@ namespace Core.Controls
     {
         InventorySystem inventory;
         Animator animator;
+        CameraPan cameraPan;
         [SerializeField] int movementSpeed = 2;
         enum Position {Forward, Backward, Right, Left}
         Position currentPostion = Position.Forward;
+
+        bool dPadActive = false;
 
         void Start()
         {
             inventory = FindObjectOfType<InventorySystem>();
             animator = GetComponent<Animator>();
+            cameraPan = FindObjectOfType<CameraPan>();
         }
 
         void Update()
         {
-            RespondToInput();
+            if(!cameraPan.cameraIsPanning)
+            {
+                RespondToInput();
+            }
+            
         }
 
         private void RespondToInput()
@@ -86,6 +94,12 @@ namespace Core.Controls
                 }
                 else
                 {
+                    // get the last d-pad direction store in a var
+                    // if the previous d-pad direction = 
+
+                    // or (wile navigating d-pad) (boolean)
+                        // lock d-pad
+
                     inventory.SelectInventorySlot(inventory.selectedSlotOrder + 1);
                 }
             }

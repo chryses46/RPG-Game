@@ -33,6 +33,7 @@ namespace Core.Interactables
                     itemToEnable.SetActive(true);
                     
                     cameraPan.InitiatePan(itemToEnable.transform.position, GameObject.FindGameObjectWithTag("Player").transform.position);
+                    enablesAnItem = false;
                 }
             }
         }

@@ -24,24 +24,36 @@ namespace Core.Interactables
 
         void OnTriggerStay2D(Collider2D other)
         {
-            dialogue.InitiateInfoDialogue(hintText, 0);
+            if(hintText != "") dialogue.InitiateInfoDialogue(hintText, 0);
 
             if(enablesAnItem)
             {
                 if(Input.GetButtonDown("Submit"))
                 {
-                    itemToEnable.SetActive(true);
-                    
-                    cameraPan.InitiatePan(itemToEnable.transform.position, GameObject.FindGameObjectWithTag("Player").transform.position);
-                    enablesAnItem = false;
+                    EnableItem();
+
+                    dialogue.ToggleDialogueBox(false);
+
+                    hintText = "";
                 }
             }
+        }
+
+        private void EnableItem()
+        {
+            itemToEnable.SetActive(true);
+
+            cameraPan.InitiatePan(itemToEnable.transform.position, GameObject.FindGameObjectWithTag("Player").transform.position);
+
+            enablesAnItem = false;
         }
 
         void OnTriggerExit2D(Collider2D other)
         {
             dialogue.ToggleDialogueBox(false);
         }
+
+
     }
 }
 

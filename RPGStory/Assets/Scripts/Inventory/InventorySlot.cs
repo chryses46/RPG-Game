@@ -33,6 +33,7 @@ namespace Core.Inventory
         public void Interacted(bool interacted)
         {
             interactBackground.SetActive(interacted);
+
             isFocus = interacted;
         }
 
@@ -76,7 +77,7 @@ namespace Core.Inventory
             Occupied = false;
             interactBackground.SetActive(false);
             background.SetActive(false);
-            useSelected = false;
+            useSelected = true;
         }
     }
 }

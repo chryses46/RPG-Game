@@ -14,9 +14,9 @@ namespace Core.Controls
         enum Position {Forward, Backward, Right, Left}
         Position currentPostion = Position.Forward;
         string currentIdleSprite;
-
         bool dpadActive = false;
         bool playerIdle = false;
+        public bool enemyEncountered = false;
 
         void Start()
         {
@@ -30,7 +30,8 @@ namespace Core.Controls
         {
             if(!cameraPan.cameraIsPanning)
             {
-                RespondToInput();
+                if(!enemyEncountered)
+                    RespondToInput();
             }
             else
             {
@@ -48,8 +49,9 @@ namespace Core.Controls
 
             if(inventory.inventoryActive)
             {
-                InventoryControls();
                 SetIdleSprite();
+                InventoryControls();
+                
             }
             else
             {
@@ -140,7 +142,6 @@ namespace Core.Controls
 
         void InventoryControls()
         {
-            
             if(inventory.isFocus)
             {
                 ProcessInventoryNavigation();

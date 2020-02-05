@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Core.Dialogue;
 using Core.Controls;
+using Core.Interactables;
 
 namespace Core.Inventory
 {    public class InventorySystem : MonoBehaviour
@@ -22,6 +23,8 @@ namespace Core.Inventory
 
         public int selectedSlotOrder;
 
+        private PuzzleObject activePuzzle;
+
         public InventorySlot currentlySelectedSlot;
 
         void Start()
@@ -34,20 +37,28 @@ namespace Core.Inventory
         {
             
             if(currentlySelectedSlot) currentlySelectedSlot.Interacted(false);
+
             GetCurrentInventory(0);
-            isFocus = true;
+
+            
 
             if(!inventoryCanvas.gameObject.activeSelf)
             {
                 inventoryCanvas.gameObject.SetActive(true);
+
                 inventoryActive = true;
 
                 selectedSlotOrder = 0;
+
+                isFocus = true;
             }
             else
             {
                 inventoryCanvas.gameObject.SetActive(false);
+
                 inventoryActive = false;
+
+                isFocus = false;
             }
         }
 
@@ -147,6 +158,7 @@ namespace Core.Inventory
                 else
                 {
                     currentlySelectedSlot.useAttempted = true;
+                    activePuzzle.CheckItemEligability();
                 }
             }
             else
@@ -158,6 +170,16 @@ namespace Core.Inventory
         public void CycleItemInteract(float x)
         {
             currentlySelectedSlot.ToggleInteractOptions(x);
+        }
+
+        public void SetActivePuzzle(PuzzleObject puzzle)
+        {
+            activePuzzle = puzzle;
+        }
+
+        public void ClearActivePuzzle()
+        {
+            activePuzzle = null;
         }
 
     }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Slates [32x32px orthogonal tileset by Ivan Voirol]_1036
+  m_Name: Door
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 8110123269991366588, guid: 12e57dc0a30b07f4ba297cf46a1ce168,
     type: 3}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Core.Controls;
 
 namespace Core.Battle
 {
@@ -33,9 +34,11 @@ namespace Core.Battle
         float step;
             // End Patrol AI variables
 
-        bool playerInRange;
         GameObject player;
+        bool playerInRange;
+        Vector3 playerCurrentPosition;
         const float distanceBuffer = .75f;
+        const float lineOfSightBuffer = .05f;
         
         void Start()
         {
@@ -52,7 +55,7 @@ namespace Core.Battle
         {
             step = speed * Time.deltaTime;
 
-            if(playerInRange)
+            if(playerInRange && PlayerInLineOfSight())
             {
                 MoveToPlayer();
             }
@@ -64,12 +67,14 @@ namespace Core.Battle
 
         void MoveToPlayer()
         {
+            Debug.Log("Player in line of sight!");
+
+                //Current code
             float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
             
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, step);
-            // animate movement
 
-            if(distanceToPlayer <= distanceBuffer)
+            if(distanceToPlayer < distanceBuffer)
                 battleSystem.InitiateBattle(enemyName, battleSprite);
         }
 
@@ -241,7 +246,32 @@ namespace Core.Battle
             if(other.tag == "Player")
             {
                 player = other.gameObject;
+                Debug.Log(player.name + " is in range.");
                 playerInRange = true;
+            }
+        }
+
+        void OnTriggerExit2D(Collider2D other)
+        {
+            if(other.tag == "Player")
+            {
+                playerInRange = false;
+            }
+        }
+
+        private bool PlayerInLineOfSight()
+        {
+            if (player.transform.position.x + lineOfSightBuffer  == transform.position.x || player.transform.position.y+ lineOfSightBuffer == transform.position.y)
+            {
+                Debug.Log("Player in LOS.");
+                player.GetComponent<PlayerControl>().enemyEncountered = true;
+                
+                return true; 
+            }
+            else
+            {
+                Debug.Log("Player in range but not LOS");
+                return false;
             }
         }
 

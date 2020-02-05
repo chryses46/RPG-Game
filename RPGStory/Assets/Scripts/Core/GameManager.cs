@@ -9,11 +9,16 @@ namespace Core
 {
     public class GameManager : MonoBehaviour
     {
+        public static GameManager instance;
+
         DialogueSystem dialogue;
         public Sprite currentAreaBackgroundImage;
 
+        public bool autoHintsEnabled = true;
+
         void Start()
         {
+            instance = this;
             dialogue = FindObjectOfType<DialogueSystem>();
             StartCoroutine("LoadGame");
         }

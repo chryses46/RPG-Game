@@ -316,7 +316,7 @@ TextureImporter:
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_91
   - first:
       213: -3277998000402181488
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_92
+    second: Grave
   - first:
       213: -907951486783488297
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_93
@@ -2260,13 +2260,13 @@ TextureImporter:
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_739
   - first:
       213: -1422691730607015176
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_740
+    second: Fence_Upper_Left_Corner
   - first:
       213: -1558665793360420617
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_741
+    second: Fence_Upper_T-Cross
   - first:
       213: -6710600247737424749
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_742
+    second: Fence_Upper_Right_Corner
   - first:
       213: -698926498549183411
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_743
@@ -2404,13 +2404,13 @@ TextureImporter:
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_787
   - first:
       213: 5226025601326530770
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_788
+    second: Fence_Left_T-Corner
   - first:
       213: 417503633308861349
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_789
+    second: Fence_Middle_T-Cross
   - first:
       213: -7825656123000051027
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_790
+    second: Fence_Right_T-Cross
   - first:
       213: -3370646125412898650
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_791
@@ -2548,13 +2548,13 @@ TextureImporter:
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_835
   - first:
       213: 3978715350773800143
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_836
+    second: Fence_Lower_Left_Corner
   - first:
       213: -7428694029520893053
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_837
+    second: Fence_Lower_T-Cross
   - first:
       213: 5312781038186063333
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_838
+    second: Fence_Left_Corner
   - first:
       213: -2333907904025213616
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_839
@@ -2608,16 +2608,16 @@ TextureImporter:
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_855
   - first:
       213: 8934891344871403035
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_856
+    second: Inn_Sign_Left
   - first:
       213: 2289321601475592976
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_857
+    second: Market_Sign_Left
   - first:
       213: 3148237001720081612
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_858
+    second: Shop_Sign_Left
   - first:
       213: 687715762346032016
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_859
+    second: Zz_Sign_Left
   - first:
       213: 5078034054639051586
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_860
@@ -2662,22 +2662,22 @@ TextureImporter:
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_873
   - first:
       213: -8779782252485573334
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_874
+    second: Tree_Small_Grass
   - first:
       213: 7719470696741448297
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_875
+    second: Tree_Small_No-Grass
   - first:
       213: 8474728713092595646
     second: Stump_Grass
   - first:
       213: 387318909169763873
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_877
+    second: Stump_No-Grass
   - first:
       213: 2319033182894273864
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_878
+    second: Bush_Large_Grass
   - first:
       213: 6421306425009249572
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_879
+    second: Bush_Large_No-Grass
   - first:
       213: -6058523655609371664
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_880
@@ -2695,10 +2695,10 @@ TextureImporter:
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_884
   - first:
       213: -46608070748009236
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_885
+    second: Fence_Lower
   - first:
       213: 5487001038562368961
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_886
+    second: Fence_Lower_Left
   - first:
       213: -1972339211207707180
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_887
@@ -2752,16 +2752,16 @@ TextureImporter:
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_903
   - first:
       213: 8144212515114928688
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_904
+    second: Inn_Sign_Right
   - first:
       213: -7255967271331742609
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_905
+    second: Market_Sign_Right
   - first:
       213: 6935549711091708240
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_906
+    second: Shop_Sign_Right
   - first:
       213: -1493627662477319993
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_907
+    second: Zz_Sign_Right
   - first:
       213: 4863802606603936742
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_908
@@ -2836,10 +2836,10 @@ TextureImporter:
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_931
   - first:
       213: 6188945844742937491
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_932
+    second: Fence_Gate_Closed
   - first:
       213: -2359075900283076475
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_933
+    second: Fence_Gate_Opened
   - first:
       213: 8848157067892236287
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_934
@@ -3145,31 +3145,31 @@ TextureImporter:
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_1034
   - first:
       213: 6152827364218397964
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_1035
+    second: Ladder_Top
   - first:
       213: 8110123269991366588
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_1036
   - first:
       213: -757247864507409436
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_1037
+    second: Box
   - first:
       213: -3697239253282209249
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_1038
+    second: Boxes_Three
   - first:
       213: 1884484864552773695
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_1039
+    second: Boxes_Two
   - first:
       213: 2215148087947062885
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_1040
+    second: Torch_Lit_1
   - first:
       213: -5860008582035223155
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_1041
+    second: Torch_Lit_2
   - first:
       213: -5172672234124182092
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_1042
+    second: Torch_Lit_3
   - first:
       213: 2731404965802878223
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_1043
+    second: Torch_Unlit
   - first:
       213: 4462828073707014487
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_1044
@@ -3289,19 +3289,19 @@ TextureImporter:
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_1082
   - first:
       213: -6731430442903294282
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_1083
+    second: Ladder
   - first:
       213: -3793028945562311667
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_1084
+    second: Ladder_Submerged
   - first:
       213: -2305561231287704451
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_1085
+    second: Bench_Left
   - first:
       213: 3515581961470496972
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_1086
+    second: Bench_Facing_Player
   - first:
       213: -3546266126972432534
-    second: Slates [32x32px orthogonal tileset by Ivan Voirol]_1087
+    second: Bench_Right
   - first:
       213: -6159425134420400887
     second: Slates [32x32px orthogonal tileset by Ivan Voirol]_1088
@@ -5397,7 +5397,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_92
+      name: Grave
       rect:
         serializedVersion: 2
         x: 1408
@@ -19005,7 +19005,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_740
+      name: Fence_Upper_Left_Corner
       rect:
         serializedVersion: 2
         x: 640
@@ -19026,7 +19026,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_741
+      name: Fence_Upper_T-Cross
       rect:
         serializedVersion: 2
         x: 672
@@ -19047,7 +19047,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_742
+      name: Fence_Upper_Right_Corner
       rect:
         serializedVersion: 2
         x: 704
@@ -20013,7 +20013,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_788
+      name: Fence_Left_T-Corner
       rect:
         serializedVersion: 2
         x: 640
@@ -20034,7 +20034,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_789
+      name: Fence_Middle_T-Cross
       rect:
         serializedVersion: 2
         x: 672
@@ -20055,7 +20055,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_790
+      name: Fence_Right_T-Cross
       rect:
         serializedVersion: 2
         x: 704
@@ -21021,7 +21021,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_836
+      name: Fence_Lower_Left_Corner
       rect:
         serializedVersion: 2
         x: 640
@@ -21042,7 +21042,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_837
+      name: Fence_Lower_T-Cross
       rect:
         serializedVersion: 2
         x: 672
@@ -21063,7 +21063,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_838
+      name: Fence_Left_Corner
       rect:
         serializedVersion: 2
         x: 704
@@ -21441,7 +21441,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_856
+      name: Inn_Sign_Left
       rect:
         serializedVersion: 2
         x: 1280
@@ -21462,7 +21462,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_857
+      name: Market_Sign_Left
       rect:
         serializedVersion: 2
         x: 1312
@@ -21483,7 +21483,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_858
+      name: Shop_Sign_Left
       rect:
         serializedVersion: 2
         x: 1344
@@ -21504,7 +21504,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_859
+      name: Zz_Sign_Left
       rect:
         serializedVersion: 2
         x: 1376
@@ -21819,7 +21819,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_874
+      name: Tree_Small_Grass
       rect:
         serializedVersion: 2
         x: 320
@@ -21840,7 +21840,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_875
+      name: Tree_Small_No-Grass
       rect:
         serializedVersion: 2
         x: 352
@@ -21882,7 +21882,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_877
+      name: Stump_No-Grass
       rect:
         serializedVersion: 2
         x: 416
@@ -21903,7 +21903,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_878
+      name: Bush_Large_Grass
       rect:
         serializedVersion: 2
         x: 448
@@ -21924,7 +21924,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_879
+      name: Bush_Large_No-Grass
       rect:
         serializedVersion: 2
         x: 480
@@ -22050,7 +22050,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_885
+      name: Fence_Lower
       rect:
         serializedVersion: 2
         x: 672
@@ -22071,7 +22071,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_886
+      name: Fence_Lower_Left
       rect:
         serializedVersion: 2
         x: 704
@@ -22449,7 +22449,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_904
+      name: Inn_Sign_Right
       rect:
         serializedVersion: 2
         x: 1280
@@ -22470,7 +22470,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_905
+      name: Market_Sign_Right
       rect:
         serializedVersion: 2
         x: 1312
@@ -22491,7 +22491,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_906
+      name: Shop_Sign_Right
       rect:
         serializedVersion: 2
         x: 1344
@@ -22512,7 +22512,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_907
+      name: Zz_Sign_Right
       rect:
         serializedVersion: 2
         x: 1376
@@ -23037,7 +23037,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_932
+      name: Fence_Gate_Closed
       rect:
         serializedVersion: 2
         x: 640
@@ -23058,7 +23058,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_933
+      name: Fence_Gate_Opened
       rect:
         serializedVersion: 2
         x: 672
@@ -25200,7 +25200,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_1035
+      name: Ladder_Top
       rect:
         serializedVersion: 2
         x: 864
@@ -25242,7 +25242,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_1037
+      name: Box
       rect:
         serializedVersion: 2
         x: 928
@@ -25263,7 +25263,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_1038
+      name: Boxes_Three
       rect:
         serializedVersion: 2
         x: 960
@@ -25284,7 +25284,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_1039
+      name: Boxes_Two
       rect:
         serializedVersion: 2
         x: 992
@@ -25305,7 +25305,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_1040
+      name: Torch_Lit_1
       rect:
         serializedVersion: 2
         x: 1024
@@ -25326,7 +25326,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_1041
+      name: Torch_Lit_2
       rect:
         serializedVersion: 2
         x: 1056
@@ -25347,7 +25347,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_1042
+      name: Torch_Lit_3
       rect:
         serializedVersion: 2
         x: 1088
@@ -25368,7 +25368,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_1043
+      name: Torch_Unlit
       rect:
         serializedVersion: 2
         x: 1120
@@ -26208,7 +26208,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_1083
+      name: Ladder
       rect:
         serializedVersion: 2
         x: 864
@@ -26229,7 +26229,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_1084
+      name: Ladder_Submerged
       rect:
         serializedVersion: 2
         x: 896
@@ -26250,7 +26250,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_1085
+      name: Bench_Left
       rect:
         serializedVersion: 2
         x: 928
@@ -26271,7 +26271,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_1086
+      name: Bench_Facing_Player
       rect:
         serializedVersion: 2
         x: 960
@@ -26292,7 +26292,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slates [32x32px orthogonal tileset by Ivan Voirol]_1087
+      name: Bench_Right
       rect:
         serializedVersion: 2
         x: 992
